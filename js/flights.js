@@ -27,8 +27,22 @@ function getFlightsFromDate(origin, dates){
 	    $.ajax({
 	        url: budgetURL
 	    }).then(function(data) {
-	    	return data;
+	    	getFlightsInBudget(data, 500);
 	    });
 	});
+}
+
+function getFlightsInBudget(data, budget){
+
+	var flightsInBudget = [];
+
+	for(i=0; i<data.results.length; i++){
+		if(data.results[i].price < budget){
+
+			flightsInBudget.push(data.results[i]);
+		}
+	}
+	console.log(flightsInBudget);
+
 }
 
