@@ -26,6 +26,7 @@ a:hover {
 
 html,
 body {
+  font-family: Helvetica, Sans-Serif;
   height: 100%;
   background-color: #fff;
 }
