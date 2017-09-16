@@ -1,0 +1,36 @@
+<!DOCTYPE html><html><body>
+
+
+
+<script>
+	var budget = document.getElementById('if_budget').value;
+	console.log(budget);
+
+	var xhttp = new XMLHttpRequest();
+
+	var params[0] = "apikey=bBduk1jlhPOfjTGiYuGUNysVrTbuOG2Q";
+	var params[1] = "origin=NYC";
+	var params[2] = "departure_date=2017-12-16--2017-12-26";
+
+	var submitParams;
+	for(int i=0; i<params.length; i++){
+		if(i > 0){
+			submitParams += "&"
+		}
+		submitParams += params[i];
+	}
+
+	var url = "https://api.sandbox.amadeus.com/v1.2/flights/inspiration-search"+params;
+
+    xhttp.open("GET", url, false);
+    xhttp.setRequestHeader("Content-type", "application/json");
+    xhttp.send();
+    var response = JSON.parse(xhttp.responseText);	
+
+</script>
+
+
+
+
+
+</body></html>
